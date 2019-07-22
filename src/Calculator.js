@@ -1,6 +1,7 @@
 import React from 'react';
 
 import './App.css';
+import toaster from 'toasted-notes';
 
 class Calculator extends React.Component {
 
@@ -28,6 +29,8 @@ class Calculator extends React.Component {
         const copyText = document.getElementById("result");
         copyText.select();
         document.execCommand("copy");
+        toaster.notify('Copied value: ' + copyText.value, {duration: 2500} );
+        toaster.notify('Copied value: ' + copyText.value, {duration: 150} );
     }
 
     render() {
