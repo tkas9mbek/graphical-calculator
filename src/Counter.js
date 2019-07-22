@@ -2,7 +2,7 @@ import React from 'react';
 
 import './App.css';
 
-class App extends React.Component {
+class Counter extends React.Component {
 
     constructor(props) {
         super(props);
@@ -25,7 +25,7 @@ class App extends React.Component {
 
     render() {
         return (
-            <div className="card mid-cos">
+            <div className="card mid-cos" >
                 <div className="row">
                     <div className="col-md-12 txt-into-cos" >
                         <a href="https://github.com/tkas9mbek/graphical-counter" style={{'color': 'black'}}> Counter by Kasymbek Tashbaev</a>
@@ -58,11 +58,24 @@ class App extends React.Component {
                     </div>
                 </div>
 
+
+
+
                 <div className="row">
                     <div className="col-md-12" >
                         <button className="btn-danger btn" style={{'border-radius': '8px', 'width':'43%', 'float': 'right'}} onClick={() => this.setState({ count: 0, value: 1})}> Reset </button>
                     </div>
                 </div>
+
+                <div className="row">
+                    <div className="col-md-12">
+                        <div className="pull-right">
+                            <a href="/calculator" style={{'color':'blue'}}>Go to Calculator</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="clearfix"/>
 
             </div>
         )
@@ -70,4 +83,4 @@ class App extends React.Component {
 
 }
 
-export default App;
+export default Counter;
