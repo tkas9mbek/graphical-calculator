@@ -28,7 +28,7 @@ class App extends React.Component {
             <div className="card mid-cos">
                 <div className="row">
                     <div className="col-md-12 txt-into-cos" >
-                        <a href="https://github.com/tkas9mbek" style={{'color': 'black'}}> Counter by Kasymbek Tashbaev</a>
+                        <a href="https://github.com/tkas9mbek/graphical-counter" style={{'color': 'black'}}> Counter by Kasymbek Tashbaev</a>
                     </div>
                 </div>
                 <div className="row">
