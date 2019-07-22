@@ -2,7 +2,7 @@ import React from 'react';
 
 import './App.css';
 
-class Counter extends React.Component {
+class Calculator extends React.Component {
 
     constructor(props) {
         super(props);
@@ -13,6 +13,7 @@ class Counter extends React.Component {
             second: 0
         };
         this.handleInputChange = this.handleInputChange.bind(this);
+        Calculator.copy = Calculator.copy.bind(this);
     }
 
     handleInputChange(event) {
@@ -23,6 +24,11 @@ class Counter extends React.Component {
         });
     }
 
+    static copy() {
+        const copyText = document.getElementById("result");
+        copyText.select();
+        document.execCommand("copy");
+    }
 
     render() {
         return (
@@ -40,16 +46,16 @@ class Counter extends React.Component {
                         <input type="number"
                                className="form-control"
                                name="first"
+                               id="first"
                                value={this.state.first}
                                onChange={this.handleInputChange}
-                               min="1"
                         />
                         <input type="number"
                                className="form-control"
                                name="second"
+                               id="second"
                                value={this.state.second}
                                onChange={this.handleInputChange}
-                               min="1"
                         />
                     </div>
                 </div>
@@ -76,10 +82,16 @@ class Counter extends React.Component {
                         <span className="input-group-text" >Result</span>
                     </div>
 
-                    <input type="text" className="form-control " value={this.state.result} disabled/>
+                    <input type="text" className="form-control" value={this.state.result} id="result" readOnly/>
 
                     <div className="input-group-append">
-                        <button className="btn btn-primary" type="button"  onClick={() => this.setState({ first: this.state.result})}>Use result</button>
+                        <button className="btn btn-primary" type="button" style={{'margin': '0px 3px 0px 3px'}}
+                                onClick={Calculator.copy}>Copy to Clipboard</button>
+                    </div>
+
+                    <div className="input-group-append">
+                        <button className="btn btn-primary" type="button"
+                                onClick={() => this.setState({ first: this.state.result})}>Use result</button>
                     </div>
                 </div>
 
@@ -87,7 +99,8 @@ class Counter extends React.Component {
 
                 <div className="row">
                     <div className="col-md-12" >
-                        <button className="btn-danger btn" style={{'border-radius': '8px', 'width':'43%', 'float': 'right'}} onClick={() => this.setState({ first: 0, second: 0, result: 0})}> Reset </button>
+                        <button className="btn-danger btn" style={{'border-radius': '8px', 'width':'43%', 'float': 'right'}}
+                                onClick={() => this.setState({ first: 0, second: 0, result: 0})}> Reset </button>
                     </div>
                 </div>
 
@@ -107,4 +120,4 @@ class Counter extends React.Component {
 
 }
 
-export default Counter;
+export default Calculator;

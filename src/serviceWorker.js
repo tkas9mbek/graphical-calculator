@@ -121,7 +121,7 @@ function checkValidServiceWorker(swUrl, config) {
     })
     .catch(() => {
       console.log(
-        'No internet connection found. Counter is running in offline mode.'
+        'No internet connection found. Calculator is running in offline mode.'
       );
     });
 }
