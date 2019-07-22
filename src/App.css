@@ -31,3 +31,33 @@
     transform: rotate(360deg);
   }
 }
+
+.mid-cos {
+  padding: 32px;
+  position: fixed;
+  right: 50%;
+  top: 52%;
+  transform: translate(50%, -50%);
+  width: 47%;
+}
+
+.txt-cos {
+  padding: 10px;
+  font-size: 24px;
+  color: blue;
+  text-align: center;
+}
+
+.txt-into-cos {
+  padding: 10px;
+  font-size: 24px;
+  color: black;
+  text-align: center;
+  font-weight: 600;
+}
+
+
+.center-block-cos {
+  right: 50%;
+  transform: translate(50%, 0);
+}
