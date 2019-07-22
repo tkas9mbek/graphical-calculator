@@ -39,6 +39,7 @@
   top: 52%;
   transform: translate(50%, -50%);
   width: 47%;
+  background-color: white;
 }
 
 .txt-cos {
@@ -74,3 +75,11 @@
   margin: 0.6%;
   border: 3px;
 }
+
+.btn-secondary-cos {
+  border-radius: 7px;
+  width: 39%;
+  float: right;
+  margin: 3px 0 9px 0;
+}
+

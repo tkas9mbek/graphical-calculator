@@ -29,8 +29,8 @@ class Calculator extends React.Component {
         const copyText = document.getElementById("result");
         copyText.select();
         document.execCommand("copy");
+        toaster.notify('Copied value: ' + copyText.value, {duration: 2495} );
         toaster.notify('Copied value: ' + copyText.value, {duration: 2500} );
-        toaster.notify('Copied value: ' + copyText.value, {duration: 150} );
     }
 
     render() {

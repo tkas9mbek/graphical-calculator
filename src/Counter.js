@@ -65,7 +65,7 @@ class Counter extends React.Component {
 
                 <div className="row">
                     <div className="col-md-12" >
-                        <button className="btn-danger btn" style={{'border-radius': '8px', 'width':'43%', 'float': 'right'}}
+                        <button className="btn-danger btn btn-secondary-cos"
                                 onClick={() => this.setState({ count: 0, value: 1})}> Reset </button>
                     </div>
                 </div>
