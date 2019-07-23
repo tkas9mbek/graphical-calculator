@@ -1,6 +1,7 @@
 # Counter & Calculator
 
-A simple counter and calculator web application implemented in JavaScript 
+A simple counter and calculator web application implemented in JavaScript. <br> 
+Visit https://graphical-calculator911.herokuapp.com/ to view it.
 
 ## Notes
 To switch between counter and calculator click label "Go to ..." at the bottom of page
