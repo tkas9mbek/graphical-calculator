@@ -12,7 +12,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-To run the applicaton, you have to have npm installed on your computer.
+To run the application, npm must be installed on your computer.
 
 ```
 curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
