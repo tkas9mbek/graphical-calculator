@@ -1,7 +1,8 @@
 import React from 'react';
 
 import './App.css';
-import toaster from 'toasted-notes';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 class Calculator extends React.Component {
 
@@ -13,6 +14,7 @@ class Calculator extends React.Component {
             first: 0,
             second: 0
         };
+
         this.handleInputChange = this.handleInputChange.bind(this);
         Calculator.copy = Calculator.copy.bind(this);
     }
@@ -29,93 +31,118 @@ class Calculator extends React.Component {
         const copyText = document.getElementById("result");
         copyText.select();
         document.execCommand("copy");
-        toaster.notify('Copied value: ' + copyText.value, {duration: 1700} );
+        toast.info('Copied value: ' + copyText.value, {
+            position: "top-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+        });
     }
 
     render() {
         return (
-            <div className="card mid-cos" >
-                <div className="row">
-                    <div className="col-md-12 txt-into-cos" >
-                        <a href="https://github.com/tkas9mbek/graphical-counter" style={{'color': 'black'}}> Calculator by Kasymbek Tashbaev</a>
-                    </div>
-                </div>
+            <div>
+                <ToastContainer
+                    position="top-center"
+                    autoClose={5000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                />
 
-                <br />
-
-                <div className="row">
-                    <div className="input-group">
-                        <input type="number"
-                               className="form-control"
-                               name="first"
-                               id="first"
-                               value={this.state.first}
-                               onChange={this.handleInputChange}
-                        />
-                        <input type="number"
-                               className="form-control"
-                               name="second"
-                               id="second"
-                               value={this.state.second}
-                               onChange={this.handleInputChange}
-                        />
-                    </div>
-                </div>
+                <div className="card mid-cos" >
 
 
-                <div className="row">
-                    <div className="col-md-12 ">
-                        <br />
-                        <button className="btn-primary btn btn-calc-cos"
-                                onClick={() => this.setState({ result: parseFloat(this.state.first) + parseFloat(this.state.second)})}> + </button>
-                        <button className="btn-primary btn btn-calc-cos"
-                                onClick={() => this.setState({ result: parseFloat(this.state.first) - parseFloat(this.state.second)})}> - </button>
-                        <button className="btn-primary btn btn-calc-cos"
-                                onClick={() => this.setState({ result: parseFloat(this.state.first) / parseFloat(this.state.second)})}> / </button>
-                        <button className="btn-primary btn btn-calc-cos"
-                                onClick={() => this.setState({ result: parseFloat(this.state.first) * parseFloat(this.state.second)})}> * </button>
-                    </div>
-                </div>
 
-                <br />
-
-                <div className="input-group">
-                    <div className="input-group-prepend">
-                        <span className="input-group-text" >Result</span>
-                    </div>
-
-                    <input type="text" className="form-control" value={this.state.result} id="result" readOnly/>
-
-                    <div className="input-group-append">
-                        <button className="btn btn-primary" type="button" style={{'margin': '0px 3px 0px 3px'}}
-                                onClick={Calculator.copy}>Copy to Clipboard</button>
-                    </div>
-
-                    <div className="input-group-append">
-                        <button className="btn btn-primary" type="button"
-                                onClick={() => this.setState({ first: this.state.result})}>Use result</button>
-                    </div>
-                </div>
-
-                <br />
-
-                <div className="row">
-                    <div className="col-md-12" >
-                        <button className="btn-danger btn" style={{'border-radius': '8px', 'width':'43%', 'float': 'right'}}
-                                onClick={() => this.setState({ first: 0, second: 0, result: 0})}> Reset </button>
-                    </div>
-                </div>
-
-                <div className="row">
-                    <div className="col-md-12">
-                        <div className="pull-right">
-                            <a href="/" style={{'color':'blue'}}>Go to Counter</a>
+                    <div className="row">
+                        <div className="col-md-12 txt-into-cos" >
+                            <a href="https://github.com/tkas9mbek/graphical-counter" style={{'color': 'black'}}> Calculator by Kasymbek Tashbaev</a>
                         </div>
                     </div>
+
+                    <br />
+
+                    <div className="row">
+                        <div className="input-group">
+                            <input type="number"
+                                   className="form-control"
+                                   name="first"
+                                   id="first"
+                                   value={this.state.first}
+                                   onChange={this.handleInputChange}
+                            />
+                            <input type="number"
+                                   className="form-control"
+                                   name="second"
+                                   id="second"
+                                   value={this.state.second}
+                                   onChange={this.handleInputChange}
+                            />
+                        </div>
+                    </div>
+
+
+                    <div className="row">
+                        <div className="col-md-12 ">
+                            <br />
+                            <button className="btn-primary btn btn-calc-cos"
+                                    onClick={() => this.setState({ result: parseFloat(this.state.first) + parseFloat(this.state.second)})}> + </button>
+                            <button className="btn-primary btn btn-calc-cos"
+                                    onClick={() => this.setState({ result: parseFloat(this.state.first) - parseFloat(this.state.second)})}> - </button>
+                            <button className="btn-primary btn btn-calc-cos"
+                                    onClick={() => this.setState({ result: parseFloat(this.state.first) / parseFloat(this.state.second)})}> / </button>
+                            <button className="btn-primary btn btn-calc-cos"
+                                    onClick={() => this.setState({ result: parseFloat(this.state.first) * parseFloat(this.state.second)})}> * </button>
+                        </div>
+                    </div>
+
+                    <br />
+
+                    <div className="input-group">
+                        <div className="input-group-prepend">
+                            <span className="input-group-text" >Result</span>
+                        </div>
+
+                        <input type="text" className="form-control" value={this.state.result} id="result" readOnly/>
+
+                        <div className="input-group-append">
+                            <button className="btn btn-primary" type="button" style={{'margin': '0px 3px 0px 3px'}}
+                                    onClick={Calculator.copy}>Copy to Clipboard</button>
+                        </div>
+
+                        <div className="input-group-append">
+                            <button className="btn btn-primary" type="button"
+                                    onClick={() => this.setState({ first: this.state.result})}>Use result</button>
+                        </div>
+                    </div>
+
+                    <br />
+
+                    <div className="row">
+                        <div className="col-md-12" >
+                            <button className="btn-danger btn" style={{'border-radius': '8px', 'width':'43%', 'float': 'right'}}
+                                    onClick={() => this.setState({ first: 0, second: 0, result: 0})}> Reset </button>
+                        </div>
+                    </div>
+
+                    <div className="row">
+                        <div className="col-md-12">
+                            <div className="pull-right">
+                                <a href="/" style={{'color':'blue'}}>Go to Counter</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="clearfix"/>
+
                 </div>
-
-                <div className="clearfix"/>
-
             </div>
         )
     }
