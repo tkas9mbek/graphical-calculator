@@ -59,10 +59,6 @@ class Counter extends React.Component {
                                 onClick={() => this.setState({ count: this.state.count - parseFloat(this.state.value)})}> Decrement </button>
                     </div>
                 </div>
-
-
-
-
                 <div className="row">
                     <div className="col-md-12" >
                         <button className="btn-danger btn btn-secondary-cos"

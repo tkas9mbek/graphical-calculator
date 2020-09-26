@@ -59,8 +59,8 @@
 
 
 .center-block-cos {
-  right: 50%;
-  transform: translate(50%, 0);
+  width: 50%;
+  margin: 0 auto;
 }
 
 .txt-side-cos {
